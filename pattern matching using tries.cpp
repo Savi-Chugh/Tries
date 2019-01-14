@@ -81,19 +81,13 @@ class Trie {
         return false;
       if(pattern.size()==0)
         return true;
-      int i=0;
-      while(i<l)
-      {
-        string s=vect[i];
-       int j=s.length();
-        int k=0;
-        while(k<j)
-          insertWord(s.substr(k++));
-        i++;
-      }
-      return search(pattern);
-      
-
-	}
-};
+     for(int i=0;i<vect.size();i++)
+     {
+     string word=vect[i];
+     for(int j=0;j<word.length();j++)
+     {
+     insertWord(word.substr(j));
+     }}
+	return search(pattern);
+	};
 
